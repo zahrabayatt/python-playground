@@ -1,8 +1,6 @@
-for number in range(3):
-    print("Attempt", number + 1, (number + 1) * ".")
+print("Hello world")
 
-for number in range(1, 4):
-    print("Attempt", number, number * ".")
+# to run python code cou can run this command in cmd:
+# python [file name]
 
-for number in range(1, 10, 2):
-    print("Attempt", number + 1, (number + 1) * ".")
+# the short way is to install code runner vs code extension and press ctrl+alt+n
