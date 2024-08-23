@@ -1,7 +1,14 @@
+# When it comes to typing Python code, you have two options:
+# code editor like  VS code, Atom, and Sublime
+# IDE like Pycharm
 
-# when you type this command in cmd you see the environment that called python interpreter:
-# python
+# to run the code, run this command: 
+# python [filename]  
+# example: python app.py
 
-# python interpreter is basically a program that executes python code. We can type our python code in a file and give it to this interpreter or we can type our code directly here in this interactive shell.
+print('Hello world 😺'); # print on the console
+print("*" * 10); # print 10 times star
+
+
 
 
