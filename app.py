@@ -1,16 +1,12 @@
-# When we talk about python, we mean two separate things that are closely related:
+# The programming languages we use, like C, C#, Java, Python, these are all simple text based languages that we humans understand; computers don't understand them, they only understand machine code.
 
-# 1- Python language: Python as a language is just a specification that defines a set of rules and grammar for writing python code.
+#  So if you have some code written in C, we should convert it to machine code, and that's the job of a C Compiler. So a C compiler is a program that knows how to convert or compile C code into machine code.
 
-# 2- Particular implementation: A python implementation is basically a program that understands those rules and can execute python code.
+# However, this machine code is specific to the type of CPU of a computer so if you compile a C program on a Windows machine we can't execute it on a Mac, because Windows and Mac have different machine code just like how people from different countries speak different languages.
 
-# Python implementation:
-# - CPython: It's the default implementation of Python and It's written in C.
-# - Jython: It written in Java.
-# - IronPython: It written in C#.
-# - PyPy: it written in a subset of Python itself.
+# Java came to solve this problem. Java compiler doesn't compile Java code into machine code, instead it compiles it into a portable language called JavaBytecode, Which is not specific to a hardware platform like Windows or Mac. Now, we still need to convert Java Bytecode to machine code. So Java also comes with a program called Java virtual machine or JVM for doing this. When we run a Java program, JVM kicks in , it loads our Java Bytecode and then at run time, it will convert each instruction to machine code. With this model, we can run Java Bytecode on any platforms that have a JVM. We have JVM implementations for Windows, Mac, and so on. C# and Python have also taken the same route, so they are platform independent.
 
-# As new features are added to the Python language, they are first supported by CPython because that's the default implementation, and then they will gradually come to the other implementations. In theory if we give some python code to any of these implementations we should get the same result, but in practice that's not always the case. Certain features may be available in one implementation but not another, or they just behave a little bit differently in a particular implementation.
+# When we run a python program using CPython first it will compile our Python code into Python Bytecode, then it will pass that Bytecode to Python Virtual Machine which will in turn convert it into machine code and execute it.This is how C Python works.
 
-# Why do we have several implementations of Python? Wouldn't CPython be enough?
-#  Well, it's for the same reason we have multiple operating systems, Or multiple operating systems, or multiple browsers, or multiple programming languages. After all these years, programmers haven't agreed on a single programming language, and that's the same story with Python implementation. However, there is one technical reason behind these implementations that you should be aware of. Since Jython is implemented in Java, it allows you to reuse some existing Java code in a Python program. So if you're a Java developer and you want to import some Java code into a Python program, you should use Jython instead of Cpython. Similarly IronPython is written in C#, so if you're a C# developer, and want to bring some C# code into a Python program, you will have to use IronPython. Next we will look at how exactly CPython executes Python Code.
+# if you wanna reuse some Java code in a Python program we should use Jython. how Jython makes this possible?
+# When you use Jython to run a python program, instead of compiling your  Python code into Python Bytecode, it will compile it to Java Bytecode, so we can take this Java Byte code and run it using Java virtual machine. And that's why we can import some Java code into a Python program when using Jython, because the end result is Java Bytecode which will eventually be executed by Java Virtual Machine.
