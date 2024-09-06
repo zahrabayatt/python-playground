@@ -1,17 +1,9 @@
-# In python we have three types of numbers:
-x = 1  # integers
-x = 1.1  # floats
-x = 1 + 2j  # complex numbers
+# If you want to write a complex mathematical calculations, you need to use the math module case we have only a handful of built in functions to work with numbers.
+# math modules docs: https://docs.python.org/3/library/math.html
+import math  # math is a object
 
-# For all these types of numbers we have the standard arithmetic operations that we have in math:
-print(10 + 3)  # addition
-print(10 - 3)  # subtraction
-print(10 * 3)  # multiplication
-print(10 / 3)  # division - we got a floating number
-print(10 // 3)  # division - we got a integer number
-print(10 % 3)  # modulus
-print(10 ** 3)  # power
+# Number Methods:
+print(round(2.9))
+print(abs(-2.9))
 
-# For all these operators, we have a special operator called Augmented Assignment Operator:
-x = 10
-x += 3  # It is equal to x = x + 3
+print(math.ceil(2.9))
