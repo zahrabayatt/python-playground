@@ -1,16 +1,17 @@
-# String Methods:
+# In python we have three types of numbers:
+x = 1  # integers
+x = 1.1  # floats
+x = 1 + 2j  # complex numbers
 
-course = "  Python programming  "
-print(course.upper())  # return a new string, original string didn't effected
-print(course.lower())
-print(course.title())
-print(course.strip())  # trim space
-print(course.rstrip())
-print(course.lstrip())
-print(course.find("pro"))
-print(course.find("Pro"))
-print(course.find("p"))
-print(course.replace("p", "j"))
-print("pro" in course)  # check if the string is exist in course
-print("swift" not in course)
-print(course)
+# For all these types of numbers we have the standard arithmetic operations that we have in math:
+print(10 + 3)  # addition
+print(10 - 3)  # subtraction
+print(10 * 3)  # multiplication
+print(10 / 3)  # division - we got a floating number
+print(10 // 3)  # division - we got a integer number
+print(10 % 3)  # modulus
+print(10 ** 3)  # power
+
+# For all these operators, we have a special operator called Augmented Assignment Operator:
+x = 10
+x += 3  # It is equal to x = x + 3
