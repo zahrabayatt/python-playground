@@ -1,11 +1,14 @@
-# What is expression?
-# It's a piece of code that produce a value.
-# example:
-"*" * 3
-# value: ***
+# Variables: we use variables to store data in computer's memory.
 
-# What is a syntax error?
-# A syntax error is a kind of error that is due to bad syntax or bad grammar in the code.
+# when we run this program, Python interpreter will allocate some memory and stor this number(1000) in that memory space. then it will have this variable reference, that memory location. So this variable is just like a label for that memory location. we can use this variable or this label anywhere in our program to get access to that memory location and the data stored there.
+students_count = 1000
+print(students_count)
 
-# What does a linter do?
-# A linter is a tool that checks our code for potential errors mostly in the category of syntactical Errors.So if you have grammatical issues in our code, the linter will tell us before running a program.
+# What kind of data can we store in computer's memory?
+# - built in primitive types: Primitive types can be numbers, booleans and strings. for example:
+students_count = 2000  # numbers with decimal point
+rating = 4.99  # float or floating point number
+course_name = "Python Programming"  # strings
+is_published = False  # boolean values can be False or True
+
+# Python is a case sensitive language, which means lowercase and uppercase character have different meanings so boolean values should always start with capital letters and false or FALSE is not accepted boolean values in Python.
