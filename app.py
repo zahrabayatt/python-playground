@@ -1,12 +1,14 @@
-# What are the primitive types in Python?
-# Numbers - they could be integer, float, complex numbers
-# Strings
-# Boolean
+# Comparison Operators
+print(10 > 3)
+print(10 >= 3)
+print(10 < 3)
+print(10 <= 3)
+print(10 == 3)
+print(10 != 3)
+# False -   because these values have different type and store differently in computer's memory
+print(10 == "10")
 
-# What is output?
-fruit = "Apple"
-print(fruit[1])  # output: p
-# output: ppl - the end character in sliding is not included!
-print(fruit[1:-1])
-print(10 % 3)  # output: 1
-print(bool("False"))  # output: True
+print("bag" > "apple")
+print("bag" > "BAG")
+print(ord("b"))
+print(ord("B"))
