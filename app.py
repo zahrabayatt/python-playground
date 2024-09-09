@@ -1,22 +1,14 @@
-for x in range(5):
-    print(x)
+# So you have learned that we use for loops to iterate over iterable objects.
 
-print(type(range(5)))  # <class 'range'>
+# In python We have another kind of loop that is a while loop:
 
-# In python we have primitive types and complex types, range is one of the complex types.
+number = 100
+while number > 0:
+    print(number)
+    number //= 2  # or number = number // 2
 
-# range object is iterable which means you can iterate over it or use it in a for loop.
-
-# range function return a range object that is iterable and because of that we can iterate it using for loop.
-
-# There is other object that is iterable in Python like strings:
-
-for x in "Python":
-    print(x)
-
-# we have another complex type called list which we use it to store a list of objects, this is also iterable:
-
-for x in [1, 2, 3, 4]:
-    print(x)
-
-# custom objects are iterable.
+# Example : simulate interactive python shell
+command = ""
+while command.lower() != "quit":
+    command = input(">")
+    print("ECHO", command)
