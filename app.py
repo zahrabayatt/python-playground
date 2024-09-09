@@ -1,8 +1,16 @@
-def greet(first_name, last_name):  # parameters
-    print(f"Hi {first_name} {last_name}")
-    print("Welcome aboard")
+def greet(name):
+    print(f"Hi {name}")
 
 
-greet("Zahra", "Bayat")  # arguments
-greet("John", "Smith")
-# greet() by default all parameters are required!
+def get_greeting(name):
+    return f"Hi {name}"
+
+
+message = get_greeting("Zahra")
+print(message)
+
+print(greet("Zahra"))  # All functions return None unless you return a value.
+
+# We have two type of functions in Python:
+# perfume a task
+# Return a Value
