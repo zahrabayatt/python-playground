@@ -1,7 +1,14 @@
-# by is optional parameter. all optional parameters should comes after required parameters.
-def increment(number, by=1):
-    return number + by
+def multiply(*numbers):
+    print(numbers)
+    total = 1
+    for number in numbers:
+        total *= number
+    return total
 
 
-print(increment(2))
-print(increment(2, 5))
+print(multiply(2, 3, 4, 5))
+
+# Tuple: (1,2,3,4,5)
+# List: [1,2,3,4,5]
+
+# Tuple is a collection of objects and like list is iterable but we can't modify that.
