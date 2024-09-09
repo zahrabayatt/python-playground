@@ -1,6 +1,7 @@
-count = 0
-for number in range(1, 10):
-    if number % 2 == 0:
-        count += 1
-        print(number)
-print(f"We have {count} even numbers")
+def greet():
+    print("Hi there")
+    print("Welcome aboard")
+
+
+greet()
+# pep8: add two line after function
