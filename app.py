@@ -1,8 +1,8 @@
-# What is output?
-if 10 == "10":
-    print("a")
-elif "bag" > "apple" and "bag" > "cat":
-    print("b")
-else:
-    print("c")
-# output: c
+for number in range(3):
+    print("Attempt", number + 1, (number+1) * ".")
+
+for number in range(1, 4):
+    print("Attempt", number, number * ".")
+
+for number in range(1, 10, 2):
+    print("Attempt", number, number * ".")
