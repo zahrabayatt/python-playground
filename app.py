@@ -1,12 +1,7 @@
-high_income = True
-good_credit = True
-student = True
-
-# Short-circuit Evaluation:
-# In python, logical operators are short circuit.
-
-if high_income and good_credit and not student:
+# age should be between 18 and 65
+age = 22
+if age >= 18 and age < 65:
     print("Eligible")
-
-if high_income or good_credit and not student:
+# or
+if 18 <= age < 65:  # This is what we called Chaining Comparison Operators
     print("Eligible")
