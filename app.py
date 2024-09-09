@@ -1,14 +1,9 @@
-def multiply(*numbers):
-    print(numbers)
-    total = 1
-    for number in numbers:
-        total *= number
-    return total
+def save_user(**user):
+    print(user)
+    print(user["id"])
+    print(user["name"])
 
 
-print(multiply(2, 3, 4, 5))
+save_user(id=1, name="Zahra", age=22)  # pass multi keyword arguments
 
-# Tuple: (1,2,3,4,5)
-# List: [1,2,3,4,5]
-
-# Tuple is a collection of objects and like list is iterable but we can't modify that.
+# Dictionary: it's a complex type. e.g. {'id': 1, 'name': 'Zahra', 'age': 22}
