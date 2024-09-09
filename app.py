@@ -1,16 +1,5 @@
-def greet(name):
-    print(f"Hi {name}")
+def increment(number, by):
+    return number + by
 
 
-def get_greeting(name):
-    return f"Hi {name}"
-
-
-message = get_greeting("Zahra")
-print(message)
-
-print(greet("Zahra"))  # All functions return None unless you return a value.
-
-# We have two type of functions in Python:
-# perfume a task
-# Return a Value
+print(increment(number=2, by=1))  # keyword arguments
