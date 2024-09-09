@@ -1,29 +1,12 @@
-# Logical Operators:
-# and
-# or
-# not
-
 high_income = True
 good_credit = True
 student = True
 
-if high_income and good_credit:
-    print("Eligible")
-else:
-    print("Not eligible")
+# Short-circuit Evaluation:
+# In python, logical operators are short circuit.
 
-if high_income or good_credit:
+if high_income and good_credit and not student:
     print("Eligible")
-else:
-    print("Not eligible")
 
-if not student:
+if high_income or good_credit and not student:
     print("Eligible")
-else:
-    print("Not eligible")
-
-
-if (high_income or good_credit) and not student:
-    print("Eligible")
-else:
-    print("Not eligible")
