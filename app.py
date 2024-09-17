@@ -1,22 +1,26 @@
-# we use [] to define list or sequence objects. in between of [] we can have object of any type like string, numbers,...
+letters = ["a", "b", "c", "d"]
+print(letters[-1])  # return fist item from the end of the list
+letters[0] = "A"  # modify items in list
+print(letters)
 
-letters = ["a", "b", "c"]
-matrix = [[0, 1], [2, 3]]
-zeros = [0] * 100
-zeros = [0] * 5  # using a star or an asterisk (*) to repeat items in a list
-combined = zeros + letters  # using plus(+) to concatenate multiple lists.
+# slice list
+# # return a new list with first three items
+print(letters[0:3])
+# if we dont' specify the end index, by default the length of list will be used:
+print(letters[0:])
 
-# in python, every object in the list can be of a different type, so they don't have to be exactly the same type.
+# if we do't specify the first item, 0 be assumed by default:
+print(letters[:3])
 
-# we can use list function to create a list, the list function get a iterable input like string, range object,..
-# with list function we can create a list like numbers from 1 until 20:
-numbers = list(range(1, 21))
-# or we can create a list of character of string:
-chars = list("Hello World")
+# get a copy of list
+print(letters[:])
 
-print(zeros)
-print(combined)
-print(numbers)
-print(chars)
+# step:
+# we can specify the step so in this example it will return every second element in list form the beginning:
+print(letters[::2])
+# it will return every third element in the list from the end:
+print(letters[::-3])
 
-print(len(chars))  # with len function we can get the length of a list
+# we can get all original items of list in revers order with step:
+numbers = list(range(21))
+print(numbers[::-1])
