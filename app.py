@@ -1,26 +1,34 @@
-letters = ["a", "b", "c", "d"]
-print(letters[-1])  # return fist item from the end of the list
-letters[0] = "A"  # modify items in list
-print(letters)
+numbers = [1, 2, 3]
+first = numbers[0]
+second = numbers[1]
+third = numbers[2]
 
-# slice list
-# # return a new list with first three items
-print(letters[0:3])
-# if we dont' specify the end index, by default the length of list will be used:
-print(letters[0:])
+# another way is to unpack list like that:
+first, second, third = numbers
 
-# if we do't specify the first item, 0 be assumed by default:
-print(letters[:3])
+# the number of variables that we have on the left side of the assignment operator should be equal  to the number of items we have in the list.
+# first, second = numbers # we got the error
 
-# get a copy of list
-print(letters[:])
+# we unpack only the first two element of list and pack other element in another variable:
+first, second, *other = numbers
+print(first)
+print(second)
+print(other)
 
-# step:
-# we can specify the step so in this example it will return every second element in list form the beginning:
-print(letters[::2])
-# it will return every third element in the list from the end:
-print(letters[::-3])
+# when we prefix a parameter with an asterisk, Python would get all these arbitrary argument and packed them into a list:
 
-# we can get all original items of list in revers order with step:
-numbers = list(range(21))
-print(numbers[::-1])
+
+def multiply(*numbers):
+    total = 1
+    for number in numbers:
+        total *= number
+    return total
+
+
+multiply(1, 2, 3, 4, 5, 6)
+
+# if we want only first and last item in the list:
+first, *other, last = numbers
+print(first)
+print(last)
+print(other)
