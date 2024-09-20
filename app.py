@@ -1,16 +1,33 @@
-letters = ["a", "b", "c"]
+numbers = [3, 51, 2, 8, 6]
 
-print(letters.index("c"))
+# sort acc
+numbers.sort()
 
-# if item doesn't exist in the list we got the error
-# print(letters.index("d"))
+# sort dec
+numbers.sort(reverse=True)
 
-# to prevent this error we should first check the item is exist and then find it in the list:
-if "d" in letters:
-    print(letters.index("d"))
+# to get the new list with specific sort:
+print(sorted(numbers, reverse=True))
+print(sorted(numbers))
 
-# to get numbers of the item with specific value:
-print(letters.count("d"))
+print(numbers)
 
-# we must to pass a argument to count method unless we got the error
-# print(letters.count())
+items = [
+    ("product1", 10),
+    ("product2", 9),
+    ("product3", 12),
+]
+
+# for sorting lists with complex object like list of topples, the sort method didn't work
+items.sort()
+print(items)
+
+# to sort list with complex object:
+
+
+def sort_item(item):
+    return item[1]  # sort items base on price
+
+
+items.sort(key=sort_item)
+print(items)
