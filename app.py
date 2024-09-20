@@ -1,21 +1,24 @@
-from sys import getsizeof
+numbers = [1, 2, 3, 4]
+print(numbers)
 
-values = [x * 2 for x in range(10)]
+# unpacking operator
+print(*numbers)
 
-print("list: ", getsizeof(values))
-
-# print(values)
-for x in values:
-    print(x)
-
-values = (x * 2 for x in range(10))
-
-# comprehensions tuple is a Generator Expressions that returns a generator object which is efficient for large collectors because unlike list it doesn't store all items in memory and because of that we can use len function for that to get count of collection and we have to iterate over generator object which is iterable object and get the count.
-
-print("list: ", getsizeof(values))
-
+# we can unpack iterable object like range:
+values = list(range(5))
 print(values)
-# print(len(values)) # error
+values = [*range(5), *"Hello"]
+print(values)
 
-for x in values:
-    print(x)
+# using unpack operator we can concatenate two lists:
+first = [1, 2]
+second = [3]
+values = [*first, "a", *second]
+print(values)
+
+# we can unpack dictionary using ** operator:
+first = {"x": 1}
+second = {"x": 10, "y": 2}
+combined = {**first, **second, "z": 1}
+# the value of x is 10, so if we have sames keys, the last value will be used.
+print(combined)
