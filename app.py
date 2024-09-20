@@ -1,38 +1,44 @@
-# set is another data structure in python which is basically a collection without duplication items.
+# in dictionary in python,we use immutable types for keys, so quiet often we use string or number for keys, but for values we can use any type.
 
-numbers = [1, 2, 3, 1, 4, 4]
-uniques = set(numbers)
-print(uniques)
+point = {"x": 1, "y": 2}
 
-# we use curly braces {} to define a set
-second = {1, 4}
-second.add(5)
-second.remove(5)
-len(second)
-print(second)
+# we can use dict function for defining dictionary:
+point = dict(x=1, y=2)
 
-# one the useful usage of sets is when we want to union two lists and we what the result list didn't have duplicate items:
-first = set([1, 2, 3, 4])
-second = set([1, 4, 5, 6])
+# we can access items by key not the index:
+point["x"] = 10
+print(point["x"])
 
-print(first | second)
+# add new item to dictionary:
+point["z"] = 20
 
-# we can also get intersections of two sets:
-print(first & second)
+print(point)
 
-# we can also get the different of two sets:
-print(first - second)
-print(second - first)
+# if we use the key that didn't exist we got error:
+# print(point["a"])
 
-# we can also get the items either in first or second set but not in both:
-print(first ^ second)
+# to check if key exist:
+if "a" in point:
+    print(point["a"])
 
-# to convert a set to list, use list function:
-print(list(uniques))
+# Or we can use get method to get value by key, if key didn't exist it returns None but we can also set the default value if key didn't exist:
+print(point.get("a"))
+print(point.get("a", 0))
 
-# set unlike list are unordered collection, we can not access item by index, so if you need to access by index, use list
-# print(first[0])
+# to delete item in dictionary:
+del point["x"]
 
-# to check if item exists in a set:
-if 1 in first:
-    print("yes")
+print(point)
+
+# to loop over a dictionary:
+
+for key in point:
+    print(key, point[key])
+
+# or
+
+for x in point.items():
+    print(x)
+
+for key, value in point.items():
+    print(key, value)
