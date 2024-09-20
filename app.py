@@ -1,19 +1,21 @@
-values = []
+from sys import getsizeof
 
-for x in range(5):
-    values.append(x * 2)
+values = [x * 2 for x in range(10)]
 
-# better solution:
+print("list: ", getsizeof(values))
 
-values = [x * 2 for x in range(5)]
+# print(values)
+for x in values:
+    print(x)
+
+values = (x * 2 for x in range(10))
+
+# comprehensions tuple is a Generator Expressions that returns a generator object which is efficient for large collectors because unlike list it doesn't store all items in memory and because of that we can use len function for that to get count of collection and we have to iterate over generator object which is iterable object and get the count.
+
+print("list: ", getsizeof(values))
+
 print(values)
+# print(len(values)) # error
 
-# we can also use comprehensions for set and dictionary:
-
-# we use curly braces to define dictionary and set:
-
-values = {x * 2 for x in range(5)}
-print(values)
-
-values = {x: x * 2 for x in range(5)}
-print(values)
+for x in values:
+    print(x)
