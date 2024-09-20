@@ -1,19 +1,21 @@
-list1 = [1, 2, 3]
-list2 = [10, 20, 30]
+# Stack: last in, first out
 
-# To get a list from these two lists where each item is a tuple,the first element of the tuple comes from list1, and the second element comes from list2, like this:
-# [(1, 10), (2, 20), (3, 30)]
-# to achieve this we use zip function:
+browsing_session = []
+# Add item to top of Stack
+browsing_session.append(1)
+browsing_session.append(2)
+browsing_session.append(3)
+print(browsing_session)
 
-zip_object = zip(list1, list2)
-print(zip_object)
+# remove item from top of the Stack
+last = browsing_session.pop()
+print(last)
+print(browsing_session)
 
-# zip_object is a iterable object
-for item in zip_object:
-    print(item)
+# check stack is empty or not
+if not browsing_session:
+    print("list is not empty")
 
-list3 = list(zip(list1, list2))
-print(list3)
-
-# we can also pass a string :
-print(list(zip("hello", list1, list2)))
+# get item from top of the Stack
+if not browsing_session:
+    print(browsing_session[-1])
