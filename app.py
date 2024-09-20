@@ -1,18 +1,38 @@
-# if you dealing with large of items in the list, we have a more efficient type in python called Array
+# set is another data structure in python which is basically a collection without duplication items.
 
-from array import array
+numbers = [1, 2, 3, 1, 4, 4]
+uniques = set(numbers)
+print(uniques)
 
-# array function get a typecode as argument which is string of one character that determines the type of object in the array:
-# typecode in python3 docs: https://docs.python.org/3/library/array.html
+# we use curly braces {} to define a set
+second = {1, 4}
+second.add(5)
+second.remove(5)
+len(second)
+print(second)
 
-numbers = array('i', [1, 2, 3])
+# one the useful usage of sets is when we want to union two lists and we what the result list didn't have duplicate items:
+first = set([1, 2, 3, 4])
+second = set([1, 4, 5, 6])
 
-# array like list has these methods and we can access the item by its index:
-numbers.append(4)
-numbers.insert(2, 9)
-numbers.pop()
-numbers.remove(9)
-print(numbers[0])
+print(first | second)
 
-# we can not add item with different type in array unlike lists
-numbers[0] = 1.0  # we got type error
+# we can also get intersections of two sets:
+print(first & second)
+
+# we can also get the different of two sets:
+print(first - second)
+print(second - first)
+
+# we can also get the items either in first or second set but not in both:
+print(first ^ second)
+
+# to convert a set to list, use list function:
+print(list(uniques))
+
+# set unlike list are unordered collection, we can not access item by index, so if you need to access by index, use list
+# print(first[0])
+
+# to check if item exists in a set:
+if 1 in first:
+    print("yes")
