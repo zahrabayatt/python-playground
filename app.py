@@ -1,21 +1,14 @@
-# Stack: last in, first out
+from collections import deque
+# Queue: First in- First out (FIFO)
 
-browsing_session = []
-# Add item to top of Stack
-browsing_session.append(1)
-browsing_session.append(2)
-browsing_session.append(3)
-print(browsing_session)
+# we can use a list to implement a Queue in Python, if the list is large, the efficient way is to use the deque object:
 
-# remove item from top of the Stack
-last = browsing_session.pop()
-print(last)
-print(browsing_session)
+queue = deque([])
+queue.append(1)
+queue.append(2)
+queue.append(3)
+queue.popleft()
 
-# check stack is empty or not
-if not browsing_session:
-    print("list is not empty")
-
-# get item from top of the Stack
-if not browsing_session:
-    print(browsing_session[-1])
+print(queue)
+if not queue:
+    print("empty")
