@@ -1,25 +1,18 @@
 try:
-    age = int(input("Age: "))
-    xfactor = 10/age
-except ValueError as ex:
-    print("You didn't enter a valid age.")
-except ZeroDivisionError:
-    print("Age can not be zero.")
-else:
-    print("No exceptions were thrown.")
+    file = open("app.py")
+    try:
+        age = int(input("Age: "))
+        xfactor = 10/age
+        # file.close()
+    except (ValueError, ZeroDivisionError):
+        print("You didn't enter a valid age.")
+    except Exception:
+        print("Something went wrong...")
+    else:
+        print("No exceptions were thrown.")
+    finally:
+        file.close()
+except Exception:
+    print("Something went wrong:")
+
 print("Execution continues.")
-
-
-try:
-    age = int(input("Age: "))
-    xfactor = 10/age
-except (ValueError, ZeroDivisionError) as ex:
-    print("You didn't enter a valid age.")
-    print(ex)
-except ZeroDivisionError:
-    print("Age can not be zero.")  # it is not going to be executed!
-else:
-    print("No exceptions were thrown.")
-print("Execution continues.")
-
-# if we have multiple except, and one of them executed, other ones are going to be ignored.
