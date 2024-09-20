@@ -1,24 +1,21 @@
-numbers = [1, 2, 3, 4]
-print(numbers)
+from pprint import pprint
 
-# unpacking operator
-print(*numbers)
+# Exercise: what character is most repeated in this sentence?
 
-# we can unpack iterable object like range:
-values = list(range(5))
-print(values)
-values = [*range(5), *"Hello"]
-print(values)
+sentence = "This is a common interview question"
 
-# using unpack operator we can concatenate two lists:
-first = [1, 2]
-second = [3]
-values = [*first, "a", *second]
-print(values)
+char_frequency = {}
+for char in sentence:
+    if char in char_frequency:
+        char_frequency[char] += 1
+    else:
+        char_frequency[char] = 1
 
-# we can unpack dictionary using ** operator:
-first = {"x": 1}
-second = {"x": 10, "y": 2}
-combined = {**first, **second, "z": 1}
-# the value of x is 10, so if we have sames keys, the last value will be used.
-print(combined)
+# pprint(char_frequency, width=1)
+
+char_frequency_sorted = sorted(
+    char_frequency.items(),
+    key=lambda kv: kv[1],
+    reverse=True)
+
+print(char_frequency_sorted[0])
