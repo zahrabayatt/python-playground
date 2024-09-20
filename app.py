@@ -1,14 +1,35 @@
 letters = ["a", "b", "c"]
-for letter in letters:
-    print(letter)
 
-# to get index and value of each element in list:
+# Adding Items in Lists:
 
-for letter in enumerate(letters):
-    print(letter, letter[0], letter[1])
+# Add item to end of the list
+letters.append("d")
 
-# The enumerate object yields pairs containing a index (from start, which defaults to zero) and a value yielded by the iterable argument.
+# Add item in specific position in the List
+letters.insert(2, "-")
 
-# unpack the topple:
-for index, letter in enumerate(letters):
-    print(index, letter)
+# Add item in the begining of the list
+letters.insert(0, "h")
+
+
+# Remove items in lists:
+
+# Remove item at the end of the list
+letters.pop()
+# you can pass the index to remove a item in given index
+letters.pop(0)
+
+# remove a first item with specific value
+letters.remove("-")
+# for remove all items with specific value you should iterate the letter and use remove method
+
+# another way to delete item in specific position
+del letters[0]
+
+# delete a range of items in the list
+del letters[0:2]
+
+# to remove all items in the list
+letters.clear()
+
+print(letters)
