@@ -1,13 +1,19 @@
-items = [
-    ("product1", 10),
-    ("product2", 9),
-    ("product3", 12),
-]
+list1 = [1, 2, 3]
+list2 = [10, 20, 30]
 
-prices = list(map(lambda item: item[1], items))
-# another way to map list, we can use List Comprehensions:
-prices = [item[1] for item in items]
+# To get a list from these two lists where each item is a tuple,the first element of the tuple comes from list1, and the second element comes from list2, like this:
+# [(1, 10), (2, 20), (3, 30)]
+# to achieve this we use zip function:
 
-filtered_items = list(filter(lambda item: item[1] >= 10, items))
-# another way to filter list, we can use List Comprehensions:
-filtered_items = [item for item in items if item[1] >= 10]
+zip_object = zip(list1, list2)
+print(zip_object)
+
+# zip_object is a iterable object
+for item in zip_object:
+    print(item)
+
+list3 = list(zip(list1, list2))
+print(list3)
+
+# we can also pass a string :
+print(list(zip("hello", list1, list2)))
