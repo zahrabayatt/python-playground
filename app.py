@@ -4,16 +4,10 @@ items = [
     ("product3", 12),
 ]
 
-# Filter list and get items with price greater than or equal 10
-
-x = filter(lambda item: item[1] >= 10, items)
-
-print(x)
-
-# x is a iterable object:
-for item in x:
-    print(item)
+prices = list(map(lambda item: item[1], items))
+# another way to map list, we can use List Comprehensions:
+prices = [item[1] for item in items]
 
 filtered_items = list(filter(lambda item: item[1] >= 10, items))
-
-print(filtered_items)
+# another way to filter list, we can use List Comprehensions:
+filtered_items = [item for item in items if item[1] >= 10]
