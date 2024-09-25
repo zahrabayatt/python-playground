@@ -1,16 +1,19 @@
-# we use all lowercase letters and separate multiple words by underscore for variable and function names.
-# we use pascal naming convention for classes.
 
 class Point:
-    def draw(self):  # all functions in classes must have at least one parameter.
-        print("draw")
+    # every functions that we define in class must has at least one parameter which we called by convention self.
+    # self is a reference to current object.
+    def __init__(self, x, y):
+        # x, y is attributes of Point
+        self.x = x
+        self.y = y
+
+    def draw(self):
+        print(f"Point ({self.x}, {self.y})")
 
 
-point = Point()
-print(type(point))
-# output: <class '__main__.Point'> - main is the name of our module.
+point = Point(1, 2)
+print(point.x)
+print(point.y)
+
+# we dont need to supply the value for self argument, python interpreter does that for us.
 point.draw()
-
-# to check if the object is instance of class:
-print(isinstance(point, Point))
-print(isinstance(point, int))
