@@ -1,24 +1,24 @@
 class Point:
-    # __init__ is a magic method.
     def __init__(self, x, y):
         self.x = x
         self.y = y
 
-    # we can reimplement the str method:
-    def __str__(self):
-        return f"({self.x}, {self.y})"
+    def __eq__(self, other):
+        return self.x == other.x and self.y == other.y
 
-    def draw(self):
-        print(f"Point ({self.x}, {self.y})")
+    def __gt__(self, other):
+        return self.x > other.x and self.y > other.y
 
 
 point = Point(1, 2)
+other = Point(1, 2)
+print(point == other)  # False - before the reimplement the __eq__ magic method
 
-# magic methods wrap two underline and they call automatically by python interpreter
-# magic docs: https://realpython.com/python-magic-methods/#representing-objects-as-strings
+# comparison-operator-methods: https://realpython.com/python-magic-methods/#comparison-operator-methods
 
-print(point)
-print(point.__str__())
-print(str(point))
-# by default it returns the name of module and the memory object followed by memory address.
-# <__main__.Point object at 0x00000205ECFF7FD0>
+point = Point(10, 20)
+other = Point(1, 2)
+print(point > other)
+
+# you don't need to implement all magic operator, when you define greater than operator, python will explicitly figure out what to do with less than operator
+print(point < other)
