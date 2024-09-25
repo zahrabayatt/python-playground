@@ -3,22 +3,16 @@ class Point:
         self.x = x
         self.y = y
 
-    def __eq__(self, other):
-        return self.x == other.x and self.y == other.y
-
-    def __gt__(self, other):
-        return self.x > other.x and self.y > other.y
+    def __add__(self, other):
+        return Point(self.x+other.x, self.y + other.y)
 
 
 point = Point(1, 2)
 other = Point(1, 2)
-print(point == other)  # False - before the reimplement the __eq__ magic method
 
-# comparison-operator-methods: https://realpython.com/python-magic-methods/#comparison-operator-methods
+combined = point + other
+print(combined)
+print(combined.x, combined.y)
 
-point = Point(10, 20)
-other = Point(1, 2)
-print(point > other)
 
-# you don't need to implement all magic operator, when you define greater than operator, python will explicitly figure out what to do with less than operator
-print(point < other)
+# other Arithmetic Operations docs: https://docs.python.org/3/reference/datamodel.html#emulating-numeric-types
