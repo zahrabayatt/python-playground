@@ -1,45 +1,35 @@
 class TagCloud:
     def __init__(self):
-        self.tags = {}
+        # to make a attribute private, prefix the name of it with double underline
+
+        self.__tags = {}
 
     def add(self, tag):
-        self.tags[tag.lower()] = self.tags.get(tag.lower(), 0) + 1
+        self.__tags[tag.lower()] = self.__tags.get(tag.lower(), 0) + 1
 
-    # it tasks two arguments: self, key
     def __getitem__(self, tag):
-        return self.tags.get(tag.lower(), 0)
+        return self.__tags.get(tag.lower(), 0)
 
-    # it tasks three arguments: self, key, value
     def __setitem__(self, tag, count):
-        self.tags[tag.lower()] = count
+        self.__tags[tag.lower()] = count
 
     def __len__(self):
-        return len(self.tags)
+        return len(self.__tags)
 
     def __iter__(self):
-        # iter is a built in function to get an iterator from an object.
-        return iter(self.tags)
+        return iter(self.__tags)
 
 
 cloud = TagCloud()
-cloud.add("python")
-cloud.add("python")
-cloud.add("python")
-print(cloud.tags)
-
 cloud.add("Python")
-print(cloud.tags)
+cloud.add("python")
+# print(cloud.__tags)
 
-# reimplement __getitem__ magic method to unable to read count of tags like this:
-print(cloud["python"])
+# technically, we can still access to these member but it is hard and it is only a convensiotn to warn to don't use this member and it does not hide this member.
+# how to access them?
+# every class, or object has this property called __dict__, this is a dictionary that holds all attributes of class, and with this we can access them:
+print(cloud.__dict__)
+# output: {'_TagCloud__tags': {'python': 2}
 
-# reimplement __getitem__ magic method to unable to set count of tags like this:
-cloud["python"] = 2
-print(cloud.tags)
-
-# reimplement __len__ magic method to unable to get numbers of tags like this:
-print(len(cloud))
-
-# reimplement __iter__ magic method to make it iterable, so we can iterate over it using a for loop:
-for tag in cloud:
-    print(tag)
+# python interpreter in runtime rename the name of __tags to _TagCloud__tags:
+print(cloud._TagCloud__tags)
