@@ -1,41 +1,29 @@
 from abc import ABC, abstractmethod
 
 
-class UIControl(ABC):
-    @abstractmethod
-    def draw(self):
-        pass
+# class UIControl(ABC):
+#     @abstractmethod
+#     def draw(self):
+#         pass
 
+# Because python is a dynamic, without the abstract class the polymorphism is still walking, and this is called duck typing (if it walks like a duck and talks like a duck it is a duck), but good practice is to use abstract class:
 
-class TextBox(UIControl):
+class TextBox:
     def draw(self):
         print("TextBox")
 
 
-class DropDownList(UIControl):
+class DropDownList:
     def draw(self):
         print("DropDownList")
 
 
-def draw(control):
-    control.draw()
-
-
-def anotherDraw(controls):
+def draw(controls):
     for control in controls:
         control.draw()
 
 
 ddl = DropDownList()
-print(isinstance(ddl, UIControl))
-draw(ddl)
-
 textbox = TextBox()
-print(isinstance(textbox, UIControl))
-draw(textbox)
 
-anotherDraw([ddl, textbox])
-
-# Polymorphism is allowing objects of different types to be treated as instances of the same class. The word comes from the Greek roots "poly" (many) and "morph" (form), meaning "many forms."
-
-# In the example you've provided, polymorphism is illustrated by the draw method, which can be invoked on different objects such as a text box, drop-down list, or radio button. The specific version of the draw method that gets executed depends on the object's actual type at runtime. This is known as runtime polymorphism, or late binding.
+draw([ddl, textbox])
