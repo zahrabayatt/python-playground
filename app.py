@@ -1,5 +1,6 @@
 class Animal:
     def __init__(self):
+        print("Animal Constructor")
         self.age = 1
 
     def eat(self):
@@ -7,6 +8,16 @@ class Animal:
 
 
 class Mammal(Animal):
+    # we overwriting the base constructor and we don't have age attribute
+    # def __init__(self):
+    #     self.weight = 2
+
+    def __init__(self):
+        super().__init__()  # we call base constructor then we have age attribute
+        print("Mammal Constructor")
+        self.weight = 2
+        # we can change the order of calling constructor by moving super().__init__() to end of the mammal constructor
+
     def walk(self):
         print("walk")
 
@@ -16,18 +27,6 @@ class Fish(Animal):
         print("swim")
 
 
-# Animal: Parent, Base
-# Mammal: Child, Sub
-# Fish: Child, Sub
-
 m = Mammal()
-m.eat()
 print(m.age)
-print(isinstance(m, Mammal))
-print(isinstance(m, Animal))
-# every class we define, it inherits from object class
-o = object()
-print(isinstance(m, object))
-print(issubclass(Mammal, Animal))
-print(issubclass(Mammal, object))
-print(issubclass(Animal, object))
+print(m.weight)
