@@ -23,3 +23,11 @@ class Fish(Animal):
 m = Mammal()
 m.eat()
 print(m.age)
+print(isinstance(m, Mammal))
+print(isinstance(m, Animal))
+# every class we define, it inherits from object class
+o = object()
+print(isinstance(m, object))
+print(issubclass(Mammal, Animal))
+print(issubclass(Mammal, object))
+print(issubclass(Animal, object))
