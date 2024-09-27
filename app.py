@@ -1,29 +1,19 @@
-from abc import ABC, abstractmethod
+# we can also inherits from built in class like str and extend it:
+class Text(str):
+    def duplicate(self):
+        return self + self
 
 
-# class UIControl(ABC):
-#     @abstractmethod
-#     def draw(self):
-#         pass
-
-# Because python is a dynamic, without the abstract class the polymorphism is still walking, and this is called duck typing (if it walks like a duck and talks like a duck it is a duck), but good practice is to use abstract class:
-
-class TextBox:
-    def draw(self):
-        print("TextBox")
+text = Text("Python")
+print(text.lower())  # we has access to built in str methods
+print(text.duplicate())
 
 
-class DropDownList:
-    def draw(self):
-        print("DropDownList")
+class TrackableList(list):
+    def append(self, object):
+        print("Append called")
+        super().append(object)
 
 
-def draw(controls):
-    for control in controls:
-        control.draw()
-
-
-ddl = DropDownList()
-textbox = TextBox()
-
-draw([ddl, textbox])
+list = TrackableList()
+print(list.append("1"))
