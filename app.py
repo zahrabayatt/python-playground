@@ -1,35 +1,64 @@
-class TagCloud:
-    def __init__(self):
-        # to make a attribute private, prefix the name of it with double underline
+class Product:
+    def __init__(self, price):
+        self.set_price(price)
 
-        self.__tags = {}
+    def get_price(self):
+        return self.__price
 
-    def add(self, tag):
-        self.__tags[tag.lower()] = self.__tags.get(tag.lower(), 0) + 1
+    def set_price(self, value):
+        if value < 0:
+            raise ValueError("Price cannot to be negative.")
 
-    def __getitem__(self, tag):
-        return self.__tags.get(tag.lower(), 0)
-
-    def __setitem__(self, tag, count):
-        self.__tags[tag.lower()] = count
-
-    def __len__(self):
-        return len(self.__tags)
-
-    def __iter__(self):
-        return iter(self.__tags)
+        self.__price = value
 
 
-cloud = TagCloud()
-cloud.add("Python")
-cloud.add("python")
-# print(cloud.__tags)
+# product = Product(-50)
 
-# technically, we can still access to these member but it is hard and it is only a convensiotn to warn to don't use this member and it does not hide this member.
-# how to access them?
-# every class, or object has this property called __dict__, this is a dictionary that holds all attributes of class, and with this we can access them:
-print(cloud.__dict__)
-# output: {'_TagCloud__tags': {'python': 2}
+# This implementation is not pythonic, which means we don't use python features and in this case we can use Property:
 
-# python interpreter in runtime rename the name of __tags to _TagCloud__tags:
-print(cloud._TagCloud__tags)
+
+class Product1:
+    def __init__(self, price):
+        self.set_price(price)
+
+    def get_price(self):
+        return self.__price
+
+    def set_price(self, value):
+        if value < 0:
+            raise ValueError("Price cannot to be negative.")
+
+        self.__price = value
+
+    # after define set and get, we define a property called price using the property function that takes four optional parameters.
+    price = property(get_price, set_price)
+
+
+product = Product1(50)
+# now we have a price property with dot notion
+# product.price = -1
+# print(product.price)
+
+# in this solution we can access to get and set methods with dont notation and they make the product1 class polluted, we can make them private or we can use a better solution using decorators:
+
+
+class Product2:
+    def __init__(self, price):
+        self.price = price
+
+    @property
+    def price(self):
+        return self.__price
+
+    @price.setter
+    def price(self, value):
+        if value < 0:
+            raise ValueError("Price cannot to be negative.")
+
+        self.__price = value
+
+
+product = Product2(50)
+print(product.price)
+product.price = -1
+print(product.price)
